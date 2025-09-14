@@ -1,0 +1,92 @@
+[
+  {
+    "id": "room1",
+    "name": "Meeting Room A",
+    "x": 379.35,
+    "y": 83.26,
+    "edges": [
+      {
+        "to": "room2",
+        "distance": 50
+      },
+      {
+        "to": "room3",
+        "distance": 120
+      }
+    ]
+  },
+  {
+    "id": "room2",
+    "name": "Meeting Room B",
+    "x": 69.74,
+    "y": 215.78,
+    "edges": [
+      {
+        "to": "room1",
+        "distance": 50
+      },
+      {
+        "to": "room3",
+        "distance": 60
+      },
+      {
+        "to": "room4",
+        "distance": 200
+      }
+    ]
+  },
+  {
+    "id": "room3",
+    "name": "Meeting Room C",
+    "x": 1049.16,
+    "y": 231.44,
+    "edges": [
+      {
+        "to": "room2",
+        "distance": 60
+      },
+      {
+        "to": "room5",
+        "distance": 150
+      }
+    ]
+  },
+  {
+    "id": "room4",
+    "name": "Meeting Room D",
+    "x": 1384.06,
+    "y": 79.65,
+    "edges": [
+      {
+        "to": "room2",
+        "distance": 200
+      },
+      {
+        "to": "room5",
+        "distance": 70
+      }
+    ]
+  },
+  {
+    "id": "room5",
+    "name": "Meeting Room E",
+    "x": 881.71,
+    "y": 77.24,
+    "edges": [
+      {
+        "to": "room3",
+        "distance": 150
+      },
+      {
+        "to": "room4",
+        "distance": 70
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "name": "New Room",
+    "x": 50,
+    "y": 50
+  }
+]
