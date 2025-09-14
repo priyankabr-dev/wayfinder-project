@@ -3,9 +3,13 @@ export interface VertexData {
   name: string;
   x: number;
   y: number;
+  cx?: number; 
+  cy?: number;
+  objectName?: string;
 }
 
 export interface EdgeData {
+  id?: string;
   from: string;
   to: string;
 }
@@ -15,7 +19,7 @@ export interface GraphData {
   edges: EdgeData[];
 }
 
-// Convert from your rooms.json
+
 export const graphData: GraphData = {
   vertices: [
     { id: "room1", name: "Meeting Room A", x: 379.35, y: 83.26 },
@@ -28,13 +32,13 @@ export const graphData: GraphData = {
     { from: "room1", to: "room2" },
     { from: "room2", to: "room3" },
     { from: "room4", to: "room5" },
-    { from: "room3", to: "room5" }, // ✅ new link so C can reach E
-    { from: "room5", to: "room4" }, // ✅ E connects to D
-    { from: "room1", to: "room5" }, // ✅ A connects to E (shortcut)
+    { from: "room3", to: "room5" }, 
+    { from: "room5", to: "room4" }, 
+    { from: "room1", to: "room5" }, 
     { from: "room2", to: "room5" },
 
-    // ✅ Add extra edges if you want better connectivity:
-    { from: "room3", to: "room5" }, // connect C ↔ E
-    { from: "room5", to: "room4" }, // already present, kept for symmetry
+    
+    { from: "room3", to: "room5" }, 
+    { from: "room5", to: "room4" }, 
   ],
 };

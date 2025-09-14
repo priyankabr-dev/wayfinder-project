@@ -1,7 +1,6 @@
-// src/pages/IndoorNavigation.tsx
-import React, { useState } from "react";
+import  { useState } from "react";
 import IndoorMapWrapper from "@/components/IndoorMapWrapper";
-import roomsData from "@/data/rooms.json"; // ✅ Import your 5 rooms
+import roomsData from "@/data/rooms.json"; 
 
 export default function IndoorNavigation() {
   const [start, setStart] = useState("");
@@ -17,7 +16,7 @@ export default function IndoorNavigation() {
 
   return (
     <div className="w-full h-screen flex flex-col bg-white">
-      {/* ✅ Controls row (always on top) */}
+      
       <div className="p-3 flex gap-3 items-center border-b bg-gray-100">
         <select
           value={start}
@@ -53,7 +52,7 @@ export default function IndoorNavigation() {
         </button>
       </div>
 
-      {/* ✅ Map (takes the rest of the screen) */}
+      
       <div className="flex-1">
         <IndoorMapWrapper />
       </div>

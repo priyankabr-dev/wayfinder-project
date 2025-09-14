@@ -4,10 +4,11 @@ import { Navigation, NavigationContextType } from "./types";
 import { ObjectItem } from "./types";
 import { graphData } from "@/store/graphData";
 import { toast } from "react-toastify";
+
 export let routeLength = 0;
 
 const findVertexByObjectId = (vertexId: string) =>
-  graphData.vertices.find((v) => v.objectName === vertexId);
+  graphData.vertices.find((v) => v.name === vertexId); 
 
 export function navigateToObject(
   selectedObjectId: string,
@@ -21,25 +22,34 @@ export function navigateToObject(
     return;
   }
 
-  const shortestPath = graph.calculateShortestPath(navigation.start, target.id);
+  const shortestPath = graph.calculateShortestPath(
+    navigation.start,
+    target.id
+  );
+
   const pathString = shortestPath
     .slice(1)
     .map((vertexId) => {
       const vertex = graphData.vertices.find((v) => v.id === vertexId);
-      return vertex ? `L${vertex.cx} ${vertex.cy}` : "";
+      return vertex ? `L${vertex.x} ${vertex.y}` : "";
     })
     .join(" ");
 
-  const startVertex = graphData.vertices.find((v) => v.id === navigation.start);
+  const startVertex = graphData.vertices.find(
+    (v) => v.id === navigation.start
+  );
   const navigationRoutePath = document.getElementById("navigation-route");
+
   if (navigationRoutePath && startVertex) {
     navigationRoutePath.setAttribute(
       "d",
-      `M${startVertex.cx} ${startVertex.cy} ${pathString}`
+      `M${startVertex.x} ${startVertex.y} ${pathString}` 
     );
     console.log("navigationRoutePath", navigationRoutePath);
+
     navigationRoutePath.classList.remove("path-once", "path-active");
     navigationRoutePath.classList.add("path-once");
+
     navigationRoutePath.addEventListener(
       "animationend",
       () => {
@@ -58,11 +68,10 @@ export function navigateToObject(
 
 export function resetEdges() {
   document.getElementById("navigation-route")?.setAttribute("d", "");
-  graphData.edges.forEach((edge) => {
-    const element = document.getElementById(edge.id);
-    if (element) {
-      element.classList.remove("path-active");
-    }
+
+ 
+  graphData.edges.forEach(() => {
+   
   });
 }
 

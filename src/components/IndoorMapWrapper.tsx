@@ -1,7 +1,6 @@
-// src/components/IndoorMapWrapper.tsx
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import MapBackground from "@/components/IndoorMap/MapBackground";
-import { graphData, VertexData } from "@/store/graphData"; // still used for graph drawing
+
 import { graph } from "@/algorithms/dijkstra";
 
 interface RoomPayload {

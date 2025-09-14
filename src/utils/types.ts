@@ -1,24 +1,77 @@
-// src/utils/types.ts (or wherever your types are defined)
+
+export interface ObjectItem {
+  id: string;
+  name: string;
+  desc: string;
+  categoryId: string;
+  categoryName?: string;
+}
+export interface Category {
+  id: string;
+  name: string;
+}
+
+export interface Beacon {
+  _id: string;
+  beacon_id: string;
+  rssi: number;
+}
+
+export interface Navigation {
+  start: string;
+  end?: string;
+}
+
+export interface NavigationContextType {
+  navigation: Navigation;
+  setNavigation: React.Dispatch<React.SetStateAction<Navigation>>;
+  isEditMode: boolean;
+  setIsEditMode: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export interface MapDataContextType {
+  objects: ObjectItem[];
+  categories: Category[];
+  beacons?: Beacon[];
+  refetchData: () => void;
+}
+
+export interface AdminContextType {
+  isAdmin: boolean;
+  setIsAdmin: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export interface BleBeacon {
+  name: string;
+  id: string;
+  rssi: number;
+  txPower: number;
+  uuids: string[];
+}
+
+
+
+
+
+
+export interface EdgeData {
+  id: string;     
+  from: string;
+  to: string;
+}
 
 export interface VertexData {
   id: string;
-  cx: number;        // ✅ keep old code working (x-coordinate)
-  cy: number;        // ✅ keep old code working (y-coordinate)
-  objectName: string; // ✅ for code still using objectName
-  name?: string;      // optional alias if some places already use name
+  cx: number;     
+  cy: number;
+  objectName?: string; 
 }
 
-export interface EdgeData {
-  from: string;
-  to: string;
-  weight?: number;
-  id?: string;        // ✅ added so components referencing edge.id won't fail
-}
-
-export interface RoomData {
+export interface Room {
   id: string;
-  name: string;
-  x: number;
-  y: number;
-  edges?: { to: string; distance: number }[];
+  edges: { id: string; weight: number }[];   
 }
+
+
+
+

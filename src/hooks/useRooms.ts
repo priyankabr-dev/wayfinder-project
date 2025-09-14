@@ -5,7 +5,8 @@ export interface Room {
   name: string;
   x: number;
   y: number;
-  edges: { to: string; distance: number }[];
+  edges: { id: string; weight: number }[]
+;
 }
 
 export function useRooms() {

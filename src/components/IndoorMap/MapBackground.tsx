@@ -2,7 +2,7 @@ import floorplan from "@/assets/floorplan.svg";
 import { ReactNode } from "react";
 import roomsData from "@/data/rooms.json";
 interface MapBackgroundProps {
-  children?: ReactNode;   // ✅ optional now
+  children?: ReactNode;   
 }
 
 
@@ -25,7 +25,7 @@ function MapBackground({ children }: MapBackgroundProps) {
   stroke="black"
   strokeWidth={2}
 >
-  <title>{room.name}</title>  {/* ✅ this is valid SVG */}
+  <title>{room.name}</title>  
 </circle>
 
       ))}
