@@ -139,7 +139,7 @@ This is a fork of [KnotzerIO/indoor-wayfinder](https://github.com/KnotzerIO/indo
 ## Setup Instructions
 
 ### Frontend
-1. Clone repo: `git clone https://github.com/<your-username>/indoor-wayfinder.git`
+1. Clone repo: `git clone https://github.com/KnotzerIO/indoor-wayfinder`
 2. Install dependencies: `npm install`
 3. Run locally: `npm run dev`
 4. Open [http://localhost:5173](http://localhost:5173)
