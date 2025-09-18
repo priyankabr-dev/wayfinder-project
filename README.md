@@ -151,7 +151,7 @@ This is a fork of [KnotzerIO/indoor-wayfinder](https://github.com/KnotzerIO/indo
 4. API available at: `http://localhost:4000/rooms`
 
 ### Live Demo
-Frontend deployed on Vercel: [https://wayfinder-project-git-main-priyanka-b-rs-projects.vercel.app](https://your-vercel-link.vercel.app)
+Frontend deployed on Vercel: [https://wayfinder-project-git-main-priyanka-b-rs-projects.vercel.app].
 Backend runs locally (`http://localhost:4000`).
 
 
